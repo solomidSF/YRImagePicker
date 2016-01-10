@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Demo-->
@@ -17,25 +18,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="no_photo" translatesAutoresizingMaskIntoConstraints="NO" id="z8y-fo-Gk0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_photo" translatesAutoresizingMaskIntoConstraints="NO" id="z8y-fo-Gk0">
                                 <rect key="frame" x="0.0" y="28" width="320" height="320"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="z8y-fo-Gk0" secondAttribute="width" multiplier="1:1" id="Y8N-yH-kl9"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6i-gN-0Bj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6i-gN-0Bj">
                                 <rect key="frame" x="79" y="356" width="163" height="30"/>
                                 <state key="normal" title="Pick (Programmatically)"/>
                                 <connections>
                                     <action selector="pickImageClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3te-JW-BQL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pP-ip-a7t">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pP-ip-a7t">
                                 <rect key="frame" x="70" y="394" width="180" height="30"/>
                                 <state key="normal" title="Pick (via Interface Builder)"/>
                                 <connections>
-                                    <action selector="pickImageClicked:" destination="NL2-DU-Ebl" eventType="touchUpInside" id="Zrd-Rr-F07"/>
+                                    <action selector="pickImageClicked:" destination="spT-at-P9Y" eventType="touchUpInside" id="NKH-Qz-ABA"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9pP-ip-a7t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2lv-2L-mka"/>
+                            <constraint firstItem="z8y-fo-Gk0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="3Ky-Hb-mGr"/>
+                            <constraint firstItem="9pP-ip-a7t" firstAttribute="top" secondItem="f6i-gN-0Bj" secondAttribute="bottom" constant="8" id="4q5-8R-7ph"/>
+                            <constraint firstItem="z8y-fo-Gk0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Nua-zk-3Zs"/>
+                            <constraint firstItem="f6i-gN-0Bj" firstAttribute="top" secondItem="z8y-fo-Gk0" secondAttribute="bottom" constant="8" id="W5N-MH-Noj"/>
+                            <constraint firstItem="f6i-gN-0Bj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eXk-vw-EIu"/>
+                            <constraint firstItem="z8y-fo-Gk0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mft-WW-Re1"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -43,10 +56,10 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <customObject id="NL2-DU-Ebl" customClass="YRImagePicker">
+                <customObject id="spT-at-P9Y" customClass="YRImagePicker">
                     <connections>
-                        <outlet property="destinationImageView" destination="z8y-fo-Gk0" id="wl7-di-cuk"/>
-                        <outlet property="owner" destination="BYZ-38-t0r" id="dUn-Hj-uKN"/>
+                        <outlet property="destinationImageView" destination="z8y-fo-Gk0" id="fy7-Ko-xic"/>
+                        <outlet property="owner" destination="BYZ-38-t0r" id="SKd-0l-Z5Y"/>
                     </connections>
                 </customObject>
             </objects>

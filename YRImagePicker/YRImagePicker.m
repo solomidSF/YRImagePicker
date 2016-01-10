@@ -212,8 +212,8 @@ UINavigationControllerDelegate
 
 - (void)presentImagePickerWithSourceType:(UIImagePickerControllerSourceType)type {
     UIImagePickerController *pickerController = [UIImagePickerController new];
-    pickerController.delegate = self;
     
+    pickerController.delegate = self;
     pickerController.sourceType = type;
     
     [_presenterController presentViewController:pickerController
